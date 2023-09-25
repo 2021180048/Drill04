@@ -38,6 +38,13 @@ def move_character():
     if (x >= TUK_WIDTH) or (x <= 0) or (y >= TUK_HEIGHT) or (y <= 0):
         dir_x = 0
         dir_y = 0
+    if dir_x > 0:
+        character.clip_draw(frame * 103, 100, 103, 100, x, y)
+        frame = (frame + 1) % 6
+    if dir_x < 0:
+        character.clip_draw(frame * 103, 200, 103, 100, x, y)
+        frame = (frame + 1) % 6
+
 
 
 running = True
