@@ -34,7 +34,11 @@ def handle_events():
                 dir_y = 0
 
 def move_character():
-    pass
+    global dir_x, dir_y
+    if (x >= TUK_WIDTH) or (x <= 0) or (y >= TUK_HEIGHT) or (y <= 0):
+        dir_x = 0
+        dir_y = 0
+
 
 running = True
 x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
