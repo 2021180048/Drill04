@@ -44,6 +44,12 @@ def move_character():
     if dir_x < 0:
         character.clip_draw(frame * 103, 200, 103, 100, x, y)
         frame = (frame + 1) % 6
+    if dir_y > 0:
+        character.clip_draw(frame * 103, 0, 103, 100, x, y)
+        frame = (frame + 1) % 6
+    if dir_y < 0:
+        character.clip_draw(frame * 103, 300, 103, 100, x, y)
+        frame = (frame + 1) % 6
 
 
 
