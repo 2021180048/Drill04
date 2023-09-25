@@ -34,7 +34,7 @@ def handle_events():
                 dir_y = 0
 
 def move_character():
-    global dir_x, dir_y
+    global dir_x, dir_y,frame
     if (x >= TUK_WIDTH) or (x <= 0) or (y >= TUK_HEIGHT) or (y <= 0):
         dir_x = 0
         dir_y = 0
@@ -50,13 +50,17 @@ def move_character():
     if dir_y < 0:
         character.clip_draw(frame * 103, 300, 103, 100, x, y)
         frame = (frame + 1) % 6
+    if dir_x == 0 and dir_y == 0:
+        character_stop.clip_draw(frame * 945//5, 0, 945//5, 187, x, y, 100, 100)
+        frame = (frame + 1) % 5
+
 
 
 
 running = True
 x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
 frame, dir_x, dir_y = 0, 0, 0
-while True:
+while running:
     clear_canvas()
     tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     move_character()
