@@ -54,9 +54,6 @@ def move_character():
         character_stop.clip_draw(frame * 945//5, 0, 945//5, 187, x, y, 100, 100)
         frame = (frame + 1) % 5
 
-
-
-
 running = True
 x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
 frame, dir_x, dir_y = 0, 0, 0
